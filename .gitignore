@@ -1,0 +1,16 @@
+# Obsidian: локальное состояние окна и кэш
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.obsidian/plugins/*/data.json.bak
+.themes/
+
+# Прочее
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Секреты и личное
+.env
+*.key
+*.pem

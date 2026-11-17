@@ -1,0 +1,11 @@
+{
+  "templates_folder": "Шаблоны",
+  "trigger_on_file_creation": true,
+  "new_file_location": "",
+  "new_file_name_format": "",
+  "new_file_template": "",
+  "dayjs_format": "YYYY-MM-DD",
+  "date_format": "YYYY-MM-DD",
+  "time_format": "HH:mm",
+  "user_language": "ru"
+}

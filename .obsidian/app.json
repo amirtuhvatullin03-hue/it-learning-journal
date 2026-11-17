@@ -1,0 +1,11 @@
+{
+  "alwaysUpdateLinks": true,
+  "newLinkFormat": "shortest",
+  "newFileLocation": "folder",
+  "newFileFolderPath": "Журнал/Дневник",
+  "attachmentFolderPath": "Вложения",
+  "useMarkdownLinks": false,
+  "showUnsupportedFiles": true,
+  "defaultViewMode": "source",
+  "promptDelete": false
+}
