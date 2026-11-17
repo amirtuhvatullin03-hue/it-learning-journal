@@ -83,6 +83,7 @@ $cfg = @{
 Write-Host "Записан .obsidian\plugins\obsidian-git\data.json" -ForegroundColor DarkGray
 
 Write-Host "== 6/6 Пуш ==" -ForegroundColor Cyan
+& $gh auth setup-git 2>&1 | Out-Null
 git add -A
 git commit -q -m "Обновление учебного хранилища" 2>$null
 git push -u origin main

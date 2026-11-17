@@ -9,6 +9,10 @@ what is specific to this project.
 1–2 ч/день дома, 6–8 ч/день в колледже, только бесплатные ресурсы).
 Кодовой базы нет.
 
+**GitHub:** https://github.com/amirtuhvatullin03-hue/it-learning-journal
+**Pages:** https://amirtuhvatullin03-hue.github.io/it-learning-journal/
+**Identity:** `quisss <358006989+amirtuhvatullin03-hue@users.noreply.github.com>` (repo-local)
+
 ## Layout
 
 - `README.md` — витрина для GitHub: кто я, зачем репозиторий, краткая карта, инструкция по Obsidian
@@ -70,6 +74,15 @@ what is specific to this project.
   папок.** PowerShell в этой консоли не резолвит кириллицу в литералах —
   команда удалит не те файлы. Сначала проверять выборку (`Select-Object FullName`),
   затем удалять по полному пути.
-- Плагины из `.obsidian/community-plugins.json` **не установлены** автоматически:
-  после первого открытия vault их нужно поставить через «Обзор» в настройках
-  community-плагинов.
+- **`.ps1` с кириллицей запускать только в файле с BOM.** Windows PowerShell 5.1
+  читает `.ps1` как ANSI без BOM → синтаксические ошибки на русском тексте.
+  Пересохранять: `[System.IO.File]::WriteAllText($p, $c, (New-Object System.Text.UTF8Encoding($true)))`.
+- В Windows PowerShell 5.1 `ErrorActionPreference = "Stop"` превращает stderr
+  нативных команд (`gh`) в terminating error. Ошибки обрабатывать по `$LASTEXITCODE`.
+- `gh` ставится в `C:\Program Files\GitHub CLI\gh.exe`; PATH в этой консоли
+  обновляется не сразу — использовать полный путь.
+- Плагины Obsidian установлены **файлами в репозитории** (`.obsidian/plugins/*/main.js`),
+  поэтому работают сразу после переноса на другую машину — достаточно включить
+  режим без ограничений в настройках community-плагинов.
+- Папки Obsidian нельзя линковать (`[[папка/]]` — битая ссылка). Ссылаться
+  на заметку-индекс и указывать имя папки текстом.

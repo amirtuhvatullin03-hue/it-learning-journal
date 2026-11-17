@@ -88,8 +88,9 @@
 
 ## Контакты
 
+- GitHub: [github.com/amirtuhvatullin03-hue](https://github.com/amirtuhvatullin03-hue)
+- Репозиторий с планом: [amirtuhvatullin03-hue/it-learning-journal](https://github.com/amirtuhvatullin03-hue/it-learning-journal)
 - Telegram: _[заполни]_
-- GitHub: _[ссылка]_
 - Почта: _[заполни]_
 
 ---
