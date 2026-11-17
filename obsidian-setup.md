@@ -74,8 +74,13 @@
 
 ### Obsidian Git
 - Настройки → Obsidian Git → включи **Auto commit interval** (10 мин) и **pull on startup**
+- Настройки уже лежат в репозитории: `.obsidian/plugins/obsidian-git/data.json`
+- Репозиторий: **https://github.com/amirtuhvatullin03-hue/it-learning-journal**
+- Токен для пушей: `gh auth setup-git` уже выполнен, git знает твой аккаунт
 - Убедись, что в репозитории настроен `user.name` и `user.email` в Git
 - Это даст тебе историю обучения в GitHub — отдельный, но приятный бонус
+
+> **Первый пуш уже сделан.** После открытия vault нажми в плагине Obsidian Git кнопку **Pull**, чтобы подтянуть изменения с GitHub, и всё заработает автоматически.
 
 ### Dataview
 Устанавливается и работает сразу. Индекс обновляется сам.
