@@ -1,11 +1,12 @@
 {
-    "promptDelete":  false,
-    "newLinkFormat":  "shortest",
-    "newFileFolderPath":  "Журнал/Дневник",
-    "showUnsupportedFiles":  true,
-    "alwaysUpdateLinks":  true,
-    "defaultViewMode":  "source",
-    "newFileLocation":  "folder",
-    "useMarkdownLinks":  false,
-    "attachmentFolderPath":  "Вложения"
+  "promptDelete": false,
+  "newLinkFormat": "shortest",
+  "newFileFolderPath": "Журнал/Дневник",
+  "showUnsupportedFiles": true,
+  "alwaysUpdateLinks": true,
+  "defaultViewMode": "source",
+  "newFileLocation": "folder",
+  "attachmentFolderPath": "Вложения",
+  "safeMode": false,
+  "useMarkdownLinks": false
 }
