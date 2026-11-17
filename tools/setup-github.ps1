@@ -1,8 +1,11 @@
-# Настройка GitHub-репозитория и плагина Obsidian Git
+﻿# Настройка GitHub-репозитория и плагина Obsidian Git
 # Запуск:  powershell -ExecutionPolicy Bypass -File tools\setup-github.ps1
 # Или из Obsidian: плагин Obsidian Git → кнопка "Open in terminal" / "Run setup"
 
-$ErrorActionPreference = "Stop"
+# Windows PowerShell 5.1 превращает stderr нативных команд в terminating error при ErrorActionPreference=Stop.
+# Поэтому ошибки обрабатываем по $LASTEXITCODE, а не через ErrorActionPreference.
+$ErrorActionPreference = "Continue"
+$ProgressPreference = "SilentlyContinue"
 $RepoName = "it-learning-journal"
 $Description = "Открытый учебный план и журнал прогресса: путь в IT (сети, кибербез, ИИ), ресурсы, проект на лето 2027"
 $Topics = @("learning-journal", "cybersecurity", "networking", "ai", "career-roadmap", "obsidian")
@@ -23,19 +26,23 @@ if ($LASTEXITCODE -ne 0) {
 
 Write-Host "== 2/6 Имя и почта для коммитов ==" -ForegroundColor Cyan
 $login = (& $gh api user --jq .login).Trim()
-$email = (& $gh api user --jq .email 2>$null)
-if (-not $email -or $email -eq "null") { $email = "$($login)@users.noreply.github.com" }
-git config user.name $login
+$name = (& $gh api user --jq .name 2>$null)
+if (-not $name -or $name -eq "null" -or [string]::IsNullOrWhiteSpace($name)) { $name = $login }
+$id = (& $gh api user --jq .id).Trim()
+# Канонический noreply-адрес GitHub: <id>+<login>@users.noreply.github.com — он связывает коммиты с профилем
+$email = "$id+$login@users.noreply.github.com"
+git config user.name $name
 git config user.email $email
-Write-Host "user.name = $login ; user.email = $email" -ForegroundColor DarkGray
+Write-Host "user.name = $name ; user.email = $email" -ForegroundColor DarkGray
 
 Write-Host "== 3/6 Создание репозитория ==" -ForegroundColor Cyan
-$exists = (& $gh repo view "$login/$RepoName" 2>$null)
+& $gh repo view "$login/$RepoName" --json name 2>$null | Out-Null
 if ($LASTEXITCODE -eq 0) {
     Write-Host "Репозиторий $login/$RepoName уже существует — пропускаю создание." -ForegroundColor DarkGray
 } else {
-    & $gh repo create $RepoName --public --description $Description --push --source . --remote origin
+    & $gh repo create $RepoName --public --description $Description --source . --remote origin
     if ($LASTEXITCODE -ne 0) { Write-Host "Не удалось создать репозиторий" -ForegroundColor Red; exit 1 }
+    Write-Host "Создан https://github.com/$login/$RepoName" -ForegroundColor Green
 }
 
 Write-Host "== 4/6 Темы и описание ==" -ForegroundColor Cyan
