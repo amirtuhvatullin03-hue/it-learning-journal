@@ -90,8 +90,10 @@
 
 - GitHub: [github.com/amirtuhvatullin03-hue](https://github.com/amirtuhvatullin03-hue)
 - Репозиторий с планом: [amirtuhvatullin03-hue/it-learning-journal](https://github.com/amirtuhvatullin03-hue/it-learning-journal)
-- Telegram: _[заполни]_
-- Почта: _[заполни]_
+
+<!-- TODO: когда появится рабочая почта и Telegram — вписать их сюда.
+     Почту лучше завести отдельную от личной (например, на proton.me или
+     отдельный домен), и указывать только её. -->
 
 ---
 
