@@ -17,6 +17,8 @@
 | Ресурс | Что даёт | Стоимость | Ссылка |
 |---|---|---|---|
 | **Harvard CS50x** | Фундамент CS: C, память, алгоритмы, Python, SQL, веб. 11 недель, self-paced, дедлайн 30 июня 2027 | Бесплатно (свой сертификат) | `cs50.harvard.edu/x/` |
+| **Stanford CS101** | Вводный курс для не-программистов: биты, железо, сети, немного Python. Лёгкий, но кода мало — только как обзор на 2 вечера | Бесплатно (материалы открыты частично) | `web.stanford.edu/class/cs101/` |
+| **roadmap.sh: Computer Science** | Карта CS-тем (сети, ОС, БД, алгоритмы). Не курс — чек-лист самодиагностики раз в 4 недели | Бесплатно | `roadmap.sh/computer-science` |
 | **MIT Missing Semester** | Shell, инструменты, отладка, Git, CI/CD, качество кода. 9 лекций по часу | Бесплатно | `missing.csail.mit.edu` |
 | **CS50 AI / CS50 Web** | Специализации CS50 (платные сертификаты, но лекции открыты) | Лекции бесплатно | `cs50.harvard.edu/ai/`, `cs50.harvard.edu/web/` |
 | **fast.ai Practical Deep Learning** | Deep learning сверху вниз, PyTorch, HuggingFace, deployment. Part 1: 9 уроков, Part 2: 30+ ч (Stable Diffusion с нуля) | Бесплатно | `course.fast.ai` |
